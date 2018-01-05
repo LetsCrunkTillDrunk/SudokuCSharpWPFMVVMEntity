@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfMVVMSudoku.LoadGameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMVVMSudoku"
+        mc:Ignorable="d"
+        Title="LoadGameWindow" Height="300" Width="300" WindowStartupLocation="CenterOwner">
+    <Grid Background="Aquamarine">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ListBox Name ="listBox1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Name ="btnLoad" Content="Загрузить" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Click="btnLoad_Click"/>
+            <Button Name ="btnDel" Content="Удалить" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Click="btnDel_Click"/>
+            <Button Name ="btnCancel" Content="Отменить" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Click="btnCancel_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>
